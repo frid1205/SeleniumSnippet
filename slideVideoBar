@@ -1,0 +1,22 @@
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div/div[1]/a")).click();
+Thread.sleep(15000);
+List<WebElement> frames = driver.findElements(By.tagName("iframe"));
+driver.switchTo().frame(frames.get(0));
+
+boolean scrublaneee = !driver.findElements(By.xpath("//*[@class='tpScrubber']")).isEmpty();
+System.out.println("scrublan : "+ scrublaneee);
+WebElement scrubberLane = driver.findElement(By.xpath("//*[@class='tpScrubber']"));
+int width = scrubberLane.getSize().getWidth();
+int widthPartial = (int) (width*0.4);
+
+//action: move cursor to middle of slider
+//action2: click cursor
+Actions move = new Actions(driver);
+
+Action action = move.moveToElement(scrubberLane, widthPartial, 0).build();
+action.perform();
+Thread.sleep(1000);
+Action action2 =  move.moveToElement(scrubberLane, widthPartial, 0).click().build();
+action2.perform();
+Thread.sleep(10000);
+System.out.println("Finish move slidebar ");
