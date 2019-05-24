@@ -1,0 +1,5 @@
+//click middle screen
+t.press(size.getWidth()/2, size.getHeight()/2).release().perform();
+
+//scroll 
+t.longPress(size.getWidth()/2, (int) (size.getHeight()*0.9)).moveTo(size.getWidth()/2, (int) (size.getHeight()*0.3)).release().perform();
