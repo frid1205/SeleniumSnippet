@@ -1,0 +1,4 @@
+((AndroidDriver)driver).runAppInBackground(Duration.ofSeconds(20));
+
+
+https://stackoverflow.com/questions/37191358/how-to-push-app-in-background-and-launch-from-same-screen-in-appium-with-seleniu/54859715#54859715
